@@ -19,6 +19,8 @@
 		A7F66F4F2217B5B0005F4614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F66F4D2217B5B0005F4614 /* Main.storyboard */; };
 		A7F66F512217B5B9005F4614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7F66F502217B5B9005F4614 /* Assets.xcassets */; };
 		A7F66F542217B5B9005F4614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F66F522217B5B9005F4614 /* LaunchScreen.storyboard */; };
+		FF324F632217F06900C7E5BA /* RakutenAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F622217F06900C7E5BA /* RakutenAPIRequest.swift */; };
+		FF324F652217FA2700C7E5BA /* WrapperMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F642217FA2700C7E5BA /* WrapperMarker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		A7F66F532217B5B9005F4614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7F66F552217B5B9005F4614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B920A78E31F8F159183BC302 /* Pods-JunctionProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JunctionProject/Pods-JunctionProject.debug.xcconfig"; sourceTree = "<group>"; };
+		FF324F622217F06900C7E5BA /* RakutenAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakutenAPIRequest.swift; sourceTree = "<group>"; };
+		FF324F642217FA2700C7E5BA /* WrapperMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperMarker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,9 @@
 				A7F66F502217B5B9005F4614 /* Assets.xcassets */,
 				A7F66F522217B5B9005F4614 /* LaunchScreen.storyboard */,
 				A7F66F552217B5B9005F4614 /* Info.plist */,
+				FF324F622217F06900C7E5BA /* RakutenAPIRequest.swift */,
+				A7E757502217D01200F1264C /* Marker.swift */,
+				FF324F642217FA2700C7E5BA /* WrapperMarker.swift */,
 			);
 			path = JunctionProject;
 			sourceTree = "<group>";
@@ -256,9 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F66F4C2217B5B0005F4614 /* ViewController.swift in Sources */,
+				FF324F652217FA2700C7E5BA /* WrapperMarker.swift in Sources */,
 				A7F66F4A2217B5B0005F4614 /* AppDelegate.swift in Sources */,
 				A7E757512217D01200F1264C /* Marker.swift in Sources */,
 				A7E757552217F53200F1264C /* DetailViewController.swift in Sources */,
+				FF324F632217F06900C7E5BA /* RakutenAPIRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

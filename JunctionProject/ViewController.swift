@@ -13,11 +13,10 @@ import CoreLocation
 
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
 
-    var locationManager = CLLocationManager()
-    
+    var locationManager = CLLocationManager()    
     let latitudeList = [35.690167, 35.710063, 35.714765]
     let longitudeList = [139.700359, 139.8107, 139.796655]
-    
+    var fezMarkers: [Marker] = []
 
     fileprivate lazy var mapView: GMSMapView = {
         let viewsize = UIScreen.main.bounds.size
@@ -57,6 +56,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         self.navigationController?.navigationBar.barTintColor = greenColor
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.tabBarController?.tabBar.isHidden = false
+        requestFizPlaces(radius: 1000, lat: 51.507784, lon: -0.12994229)
     }
     
     
@@ -64,7 +64,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         self.performSegue(withIdentifier: "toDetail", sender: nil)
         return true
     }
-    
 }
 
 extension ViewController {
@@ -97,5 +96,11 @@ extension ViewController {
         //マーカーをmapviewに表示
         marker.map = self.mapView
 
+    }
+
+    func requestFizPlaces(radius: Int, lat: Double, lon: Double) {
+        RakutenAPIRequest.getPlaces(radius: radius, lat: lat, lon: lon, success: { wrapperMarker in
+            self.fezMarkers = wrapperMarker.results
+        })
     }
 }
