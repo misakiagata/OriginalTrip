@@ -18,11 +18,9 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
     @IBOutlet var tagLabel: UILabel!
     @IBOutlet var organizerNameLabel: UILabel!
     @IBOutlet var phoneNumberLabel: UILabel!
-    
+    @IBOutlet var organizerImage: UIImageView!
     
     var locationManager = CLLocationManager()
-    
-    let viewController = ViewController()
     
     let latitudeList = [35.690167, 35.710063, 35.714765, 35.710063]
     let longitudeList = [139.700359, 139.8107, 139.796655, 139.8107]
@@ -38,9 +36,14 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         super.viewDidLoad()
         
         phoneCallButton.layer.cornerRadius = phoneCallButton.bounds.height/2
+        let orangeColor = UIColor(red: 255/255, green: 154/255, blue: 1/255, alpha: 1.0)
+        phoneCallButton.layer.borderColor = orangeColor.cgColor
+        phoneCallButton.layer.borderWidth = 2
+        phoneCallButton.setImage(UIImage.init(named: "tel.png"), for: .normal)
         phoneCallButton.layer.masksToBounds = true
         
         reserveButton.layer.cornerRadius = reserveButton.bounds.height/2
+        reserveButton.setImage(UIImage.init(named: "check.png"), for: .normal)
         reserveButton.layer.masksToBounds = true
 
         view.addSubview(mapView)
@@ -90,6 +93,8 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
     
     func showMarker(position: CLLocationCoordinate2D, placeName: String, address: String) {
         let marker = GMSMarker()
+        let markerImage = UIImage(named: "icon2.png")
+        marker.iconView = UIImageView(image: markerImage)
         marker.position = position
         marker.title = placeName
         marker.snippet = address

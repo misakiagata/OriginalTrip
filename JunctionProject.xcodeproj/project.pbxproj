@@ -10,7 +10,10 @@
 		0BED0D64060A32FE32BDA0F5 /* Pods_JunctionProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236B8B3CB786DC71CACE64DE /* Pods_JunctionProject.framework */; };
 		A7E757512217D01200F1264C /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E757502217D01200F1264C /* Marker.swift */; };
 		A7E757552217F53200F1264C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E757542217F53200F1264C /* DetailViewController.swift */; };
-		A7E7575722180DAE00F1264C /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E7575622180DAD00F1264C /* user@2x.png */; };
+		A7E7575D2218422300F1264C /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E757582218422200F1264C /* icon2.png */; };
+		A7E7575E2218422300F1264C /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E757592218422200F1264C /* check.png */; };
+		A7E7575F2218422300F1264C /* icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E7575A2218422200F1264C /* icon1.png */; };
+		A7E757612218422300F1264C /* tel.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E7575C2218422300F1264C /* tel.png */; };
 		A7F66F4A2217B5B0005F4614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F66F492217B5B0005F4614 /* AppDelegate.swift */; };
 		A7F66F4C2217B5B0005F4614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F66F4B2217B5B0005F4614 /* ViewController.swift */; };
 		A7F66F4F2217B5B0005F4614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F66F4D2217B5B0005F4614 /* Main.storyboard */; };
@@ -23,7 +26,10 @@
 		8A53D7C042C380A99FBCB4AA /* Pods-JunctionProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-JunctionProject/Pods-JunctionProject.release.xcconfig"; sourceTree = "<group>"; };
 		A7E757502217D01200F1264C /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		A7E757542217F53200F1264C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		A7E7575622180DAD00F1264C /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
+		A7E757582218422200F1264C /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		A7E757592218422200F1264C /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		A7E7575A2218422200F1264C /* icon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon1.png; sourceTree = "<group>"; };
+		A7E7575C2218422300F1264C /* tel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tel.png; sourceTree = "<group>"; };
 		A7F66F462217B5B0005F4614 /* JunctionProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F66F492217B5B0005F4614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F66F4B2217B5B0005F4614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A7E757622218424000F1264C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A7E757592218422200F1264C /* check.png */,
+				A7E7575A2218422200F1264C /* icon1.png */,
+				A7E757582218422200F1264C /* icon2.png */,
+				A7E7575C2218422300F1264C /* tel.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		A7F66F3D2217B5B0005F4614 = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +105,8 @@
 				A7F66F4B2217B5B0005F4614 /* ViewController.swift */,
 				A7E757542217F53200F1264C /* DetailViewController.swift */,
 				A7F66F4D2217B5B0005F4614 /* Main.storyboard */,
+				A7E757622218424000F1264C /* Images */,
 				A7E757502217D01200F1264C /* Marker.swift */,
-				A7E7575622180DAD00F1264C /* user@2x.png */,
 				A7F66F502217B5B9005F4614 /* Assets.xcassets */,
 				A7F66F522217B5B9005F4614 /* LaunchScreen.storyboard */,
 				A7F66F552217B5B9005F4614 /* Info.plist */,
@@ -159,9 +176,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7F66F542217B5B9005F4614 /* LaunchScreen.storyboard in Resources */,
+				A7E7575E2218422300F1264C /* check.png in Resources */,
+				A7E7575F2218422300F1264C /* icon1.png in Resources */,
 				A7F66F512217B5B9005F4614 /* Assets.xcassets in Resources */,
 				A7F66F4F2217B5B0005F4614 /* Main.storyboard in Resources */,
-				A7E7575722180DAE00F1264C /* user@2x.png in Resources */,
+				A7E7575D2218422300F1264C /* icon2.png in Resources */,
+				A7E757612218422300F1264C /* tel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
