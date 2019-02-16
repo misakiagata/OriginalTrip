@@ -1,0 +1,6 @@
+framework module Pods_JunctionProject {
+  umbrella header "Pods-JunctionProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
