@@ -14,6 +14,7 @@ import CoreLocation
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
 
     var locationManager = CLLocationManager()
+    var fezMarkers: [Marker] = []
 
     fileprivate lazy var mapView: GMSMapView = {
         let viewsize = UIScreen.main.bounds.size
@@ -40,6 +41,11 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
 
         let myLocation = locateMyPosition()
         showMarker(position: CLLocationCoordinate2D.init(latitude: myLocation.latitude, longitude: myLocation.longitude), placeName: "", address: "")
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        requestFizPlaces(radius: 1000, lat: 51.507784, lon: -0.12994229)
     }
 }
 
@@ -73,5 +79,11 @@ extension ViewController {
         //マーカーをmapviewに表示
         marker.map = self.mapView
 
+    }
+
+    func requestFizPlaces(radius: Int, lat: Double, lon: Double) {
+        RakutenAPIRequest.getPlaces(radius: radius, lat: lat, lon: lon, success: { wrapperMarker in
+            self.fezMarkers = wrapperMarker.results
+        })
     }
 }
