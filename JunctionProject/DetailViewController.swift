@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  JunctionProject
 //
 //  Created by 縣美早 on 2019/02/16.
@@ -9,70 +9,69 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-import CoreLocation
 
-class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
-
+class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
+    
+    @IBOutlet var phoneCallButton: UIButton!
+    @IBOutlet var reserveButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var tagLabel: UILabel!
+    @IBOutlet var organizerNameLabel: UILabel!
+    @IBOutlet var phoneNumberLabel: UILabel!
+    
+    
     var locationManager = CLLocationManager()
     
-    let latitudeList = [35.690167, 35.710063, 35.714765]
-    let longitudeList = [139.700359, 139.8107, 139.796655]
+    let viewController = ViewController()
     
-
+    let latitudeList = [35.690167, 35.710063, 35.714765, 35.710063]
+    let longitudeList = [139.700359, 139.8107, 139.796655, 139.8107]
+    
     fileprivate lazy var mapView: GMSMapView = {
         let viewsize = UIScreen.main.bounds.size
-
-        let view = GMSMapView(frame: CGRect(x: 0, y: 0, width: viewsize.width, height: viewsize.height))
+        
+        let view = GMSMapView(frame: CGRect(x: 0, y: 0, width: viewsize.width, height: viewsize.height/1.3))
         return view
     }()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        locationManager.requestWhenInUseAuthorization()
+        
+        phoneCallButton.layer.cornerRadius = phoneCallButton.bounds.height/2
+        phoneCallButton.layer.masksToBounds = true
+        
+        reserveButton.layer.cornerRadius = reserveButton.bounds.height/2
+        reserveButton.layer.masksToBounds = true
 
         view.addSubview(mapView)
-        mapView.updateConstraintsIfNeeded()
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        mapView.delegate = self
         
         for latitude in latitudeList {
             for longitude in longitudeList {
                 showMarker(position: CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude), placeName: "", address: "")
             }
         }
- 
-        //        let latitude = locationManager.location?.coordinate.latitude
-        //        let longitude = locationManager.location?.coordinate.longitude
-        //        var currentLocation = CGPoint(x: longitude!, y: latitude!)
-
-        let myLocation = locateMyPosition()
-        
+        let mylocation = locateMyPosition()
+        let camera = GMSCameraPosition.camera(withLatitude: mylocation.latitude, longitude: mylocation.longitude, zoom: 15.0)
+        mapView.camera = camera
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let greenColor = UIColor(red: 115/255, green: 222/255, blue: 188/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = greenColor
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
+
     }
-    
-    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        self.performSegue(withIdentifier: "toDetail", sender: nil)
+        self.performSegue(withIdentifier: "toSpotDetail", sender: nil)
         return true
     }
     
-}
-
-extension ViewController {
     func locateMyPosition() -> CLLocationCoordinate2D {
         // 現在地の緯度経度
         let latitude = locationManager.location?.coordinate.latitude
         let longitude = locationManager.location?.coordinate.longitude
-
+        
         let dummyLocation = CLLocationCoordinate2DMake(35.690167, 139.700359)
         //表示する時の中心となる場所を指定する（nilに注意）
         if let unwrappedLatitude = latitude {
@@ -88,14 +87,38 @@ extension ViewController {
             return dummyLocation
         }
     }
+    
     func showMarker(position: CLLocationCoordinate2D, placeName: String, address: String) {
         let marker = GMSMarker()
         marker.position = position
         marker.title = placeName
         marker.snippet = address
-
-        //マーカーをmapviewに表示
+        
         marker.map = self.mapView
-
+        
     }
+    
+    @IBAction func showAlert() {
+        let alertController = UIAlertController(title: "Reservation", message: "Do you confirm the reservation?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            
+            let alert = UIAlertController(title: "Success!", message: "Your reservation has been confirmed.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                alert.dismiss(animated: true, completion: nil)
+            })
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            alertController.dismiss(animated: true, completion: nil)
+    
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (UIAlertAction) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+
+
 }
