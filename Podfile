@@ -6,13 +6,9 @@ target 'JunctionProject' do
   use_frameworks!
 
 pod 'GoogleMaps'
-
 pod 'GooglePlaces'
-
 pod 'Alamofire'
-
 pod 'ObjectMapper'
-
 pod 'AlamofireObjectMapper'
 
   # Pods for JunctionProject

@@ -48,7 +48,18 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         //        var currentLocation = CGPoint(x: longitude!, y: latitude!)
 
         let myLocation = locateMyPosition()
-        
+
+
+//        let direction = Direction(from:"35.6775602107869,139.692658446729",to: "35.707848364433,139.701456092298",mode: .walking)
+//        direction.directionCompletion(handler: { (route) in
+//
+//            for route in route.routes {
+//                self.mapView.addDirection(path: (route?.overview_polyline?.points)!)
+//            }
+//
+//        }) { (error) in
+//            print (error)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
