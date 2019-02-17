@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import CoreLocation
 
 class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
     
@@ -18,7 +19,8 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
     @IBOutlet var tagLabel: UILabel!
     @IBOutlet var organizerNameLabel: UILabel!
     @IBOutlet var phoneNumberLabel: UILabel!
-    @IBOutlet var organizerImage: UIImageView!
+    @IBOutlet var organizerImageView: UIImageView!
+    @IBOutlet var mapImageView: UIImageView!
     
     var locationManager = CLLocationManager()
     
@@ -45,8 +47,17 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         reserveButton.layer.cornerRadius = reserveButton.bounds.height/2
         reserveButton.setImage(UIImage.init(named: "check.png"), for: .normal)
         reserveButton.layer.masksToBounds = true
+        
+        mapImageView.image = UIImage(named: "tour.png")
 
-        view.addSubview(mapView)
+        organizerImageView.image = UIImage(named: "tel.png")
+        organizerImageView.layer.cornerRadius = organizerImageView.bounds.height/2
+        organizerImageView.layer.masksToBounds = true
+        
+        navigationController?.navigationBar.topItem?.title = "Trip Details"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        //view.addSubview(mapView)
         
         for latitude in latitudeList {
             for longitude in longitudeList {
@@ -58,17 +69,21 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         mapView.camera = camera
     }
     
+//    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+//        self.performSegue(withIdentifier: "toPlanDetail", sender: nil)
+//        return true
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
         let greenColor = UIColor(red: 115/255, green: 222/255, blue: 188/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = greenColor
-        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.topItem?.title = "Trip Details"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
 
     }
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        self.performSegue(withIdentifier: "toSpotDetail", sender: nil)
-        return true
-    }
+
     
     func locateMyPosition() -> CLLocationCoordinate2D {
         // 現在地の緯度経度
@@ -93,8 +108,8 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
     
     func showMarker(position: CLLocationCoordinate2D, placeName: String, address: String) {
         let marker = GMSMarker()
-        let markerImage = UIImage(named: "icon2.png")
-        marker.iconView = UIImageView(image: markerImage)
+        //let markerImage = UIImage(named: "icon2.png")
+       //marker.iconView = UIImageView(image: markerImage)
         marker.position = position
         marker.title = placeName
         marker.snippet = address

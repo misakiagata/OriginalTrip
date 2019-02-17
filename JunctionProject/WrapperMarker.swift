@@ -29,5 +29,6 @@ class WrapperMarker: Mappable {
         results = resultDictionary.compactMap { result in
             Marker(map: Map(mappingType: .fromJSON, JSON: result))
         }
+        print(resultDictionary)
     }
 }
