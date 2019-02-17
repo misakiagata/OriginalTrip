@@ -27,17 +27,17 @@
                                             <constraint firstAttribute="width" secondItem="faL-cn-IeV" secondAttribute="height" multiplier="1:1" id="KKQ-2x-E22"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像からタグ情報を取得しますか？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-aV-BKp">
-                                        <rect key="frame" x="25" y="329" width="277.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new trip?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-aV-BKp">
+                                        <rect key="frame" x="78" y="329" width="171.5" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="6iQ-Ir-y3i"/>
+                                            <constraint firstAttribute="height" constant="24" id="6iQ-Ir-y3i"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Riy-kr-c75">
-                                        <rect key="frame" x="161" y="364" width="134" height="52"/>
+                                        <rect key="frame" x="161" y="367" width="134" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="Rge-Mz-xhq"/>
                                             <constraint firstAttribute="width" constant="134" id="eYK-NW-TQX"/>
@@ -48,7 +48,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-xc-ibh">
-                                        <rect key="frame" x="24" y="364" width="134" height="52"/>
+                                        <rect key="frame" x="24" y="367" width="134" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="DYT-st-NNc"/>
                                             <constraint firstAttribute="width" constant="134" id="ELd-cx-sJX"/>
