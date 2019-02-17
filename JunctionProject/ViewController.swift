@@ -51,8 +51,6 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         var myLocation = locateMyPosition()
         
         for i in 0..<5 {
-            print(destinationLat[i])
-            print(destinationLon[i])
             requestFizPlaces(radius: 1000, lat: destinationLat[i], lon: destinationLon[i])
             showMarker(position: CLLocationCoordinate2D.init(latitude: destinationLat[i], longitude: destinationLon[i]), placeName: "", address: "")
         }

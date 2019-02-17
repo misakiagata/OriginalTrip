@@ -25,11 +25,9 @@ class DetailSpotsViewController: UIViewController {
             detailImageView.image = UIImage(named: imageArray[number])
             number += 1
         } else {
-           reset()
+            self.navigationController?.popViewController(animated: true)
         }
         
     }
-    func reset() {
-         number = 0
-    }
+    
 }

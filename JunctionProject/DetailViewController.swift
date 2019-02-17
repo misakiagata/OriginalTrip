@@ -51,7 +51,7 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         organizerImageView.layer.cornerRadius = organizerImageView.bounds.height/2
         organizerImageView.layer.masksToBounds = true
         
-        navigationController?.navigationBar.topItem?.title = "Trip Details"
+        //navigationController?.navigationBar.topItem?.title = "Trip Details"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -78,7 +78,7 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         self.navigationController?.navigationBar.barTintColor = greenColor
         self.tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.topItem?.title = "Trip Details"
+        //navigationController?.navigationBar.topItem?.title = "Trip Details"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         

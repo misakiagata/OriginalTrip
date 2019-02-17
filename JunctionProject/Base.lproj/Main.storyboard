@@ -73,7 +73,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="cAC-eA-b74">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userImage.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="cAC-eA-b74">
                                         <rect key="frame" x="23" y="116" width="56" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -104,7 +104,7 @@
                                             <action selector="showAlert" destination="x8T-7K-lwA" eventType="touchUpInside" id="0sK-AF-jzs"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hui Whiplus Wang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-kP-zJg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Misaki Agata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UL-kP-zJg">
                                         <rect key="frame" x="87" y="113" width="255" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -211,9 +211,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image.JPG" width="1024" height="1024"/>
         <image name="junction.png" width="1125" height="2001"/>
         <image name="star.png" width="25" height="25"/>
         <image name="tour.png" width="1125" height="2001"/>
+        <image name="userImage.JPG" width="2261" height="1507"/>
     </resources>
 </document>

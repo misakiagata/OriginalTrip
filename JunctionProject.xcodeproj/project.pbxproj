@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BED0D64060A32FE32BDA0F5 /* Pods_JunctionProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236B8B3CB786DC71CACE64DE /* Pods_JunctionProject.framework */; };
+		A7C7FEC422190C3D0033E615 /* userImage@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A7C7FEC322190C3D0033E615 /* userImage@2x.JPG */; };
 		A7E757512217D01200F1264C /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E757502217D01200F1264C /* Marker.swift */; };
 		A7E757552217F53200F1264C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E757542217F53200F1264C /* DetailViewController.swift */; };
 		A7E7575D2218422300F1264C /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E757582218422200F1264C /* icon2.png */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		236B8B3CB786DC71CACE64DE /* Pods_JunctionProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JunctionProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A53D7C042C380A99FBCB4AA /* Pods-JunctionProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-JunctionProject/Pods-JunctionProject.release.xcconfig"; sourceTree = "<group>"; };
+		A7C7FEC322190C3D0033E615 /* userImage@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "userImage@2x.JPG"; sourceTree = "<group>"; };
 		A7E757502217D01200F1264C /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		A7E757542217F53200F1264C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A7E757582218422200F1264C /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		A7E757622218424000F1264C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A7C7FEC322190C3D0033E615 /* userImage@2x.JPG */,
 				A7E757792218FB0500F1264C /* star@2x.png */,
 				A7E757692218755E00F1264C /* tour.png */,
 				A7E757762218F62900F1264C /* explore@2x.png */,
@@ -235,6 +238,7 @@
 				A7E7577A2218FB0600F1264C /* star@2x.png in Resources */,
 				A7E7575F2218422300F1264C /* icon1.png in Resources */,
 				A7E757772218F62900F1264C /* reserve@2x.png in Resources */,
+				A7C7FEC422190C3D0033E615 /* userImage@2x.JPG in Resources */,
 				A7F66F512217B5B9005F4614 /* Assets.xcassets in Resources */,
 				A7E75771221880B200F1264C /* junction5.png in Resources */,
 				A7E75772221880B200F1264C /* junction4.png in Resources */,
