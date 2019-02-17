@@ -65,9 +65,8 @@ class ConfirmViewController: UIViewController {
     }
 
     func uploadToCloudinary(){
-        guard let uploadimageData = selectedImage.pngData() else {
-            return
-        }
+        let crpppedImage = selectedImage.croppingToCenterSquare()
+        guard let uploadimageData = crpppedImage.configureUpload() else { return }
         let request = cloudinary.createUploader().upload(data: uploadimageData, uploadPreset: "s0ht6m2b")
         request.response({ (result, error) in
             if let result = result {
