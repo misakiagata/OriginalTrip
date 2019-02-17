@@ -19,6 +19,15 @@ class ConfirmViewController: UIViewController {
     var selectedImage = UIImage()
     var cloudinary = CLDCloudinary(configuration: CLDConfiguration(cloudinaryUrl: "cloudinary://811678753816195:Y7GnzUIkCmWIIF0sTJ1kaf86_eo@dctjfnqhu/")!)
     fileprivate var initialTouchPoint: CGPoint = CGPoint(x: 0,y: 0)
+
+    fileprivate lazy var indicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        indicator.bounds =  CGRect(x: 0, y: 0, width: 30, height: 30)
+        indicator.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
+        indicator.hidesWhenStopped = true
+        indicator.color = .black
+        return indicator
+    }()
     fileprivate lazy var panGestureRecognizer: UIPanGestureRecognizer = {
         let recognizer = UIPanGestureRecognizer(target: self, action: #selector(self.goBackPageByPan(_:)))
         recognizer.delegate = self
@@ -29,6 +38,7 @@ class ConfirmViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         self.view.addGestureRecognizer(panGestureRecognizer)
+        self.view.addSubview(indicator)
 
         let config = CLDConfiguration(cloudName: "dctjfnqhu", apiKey: "811678753816195", apiSecret: "Y7GnzUIkCmWIIF0sTJ1kaf86_eo")
         cloudinary = CLDCloudinary(configuration: config)
@@ -36,6 +46,11 @@ class ConfirmViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.indicator.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +83,10 @@ class ConfirmViewController: UIViewController {
         let crpppedImage = selectedImage.croppingToCenterSquare()
         guard let uploadimageData = crpppedImage.configureUpload() else { return }
         let request = cloudinary.createUploader().upload(data: uploadimageData, uploadPreset: "s0ht6m2b")
+        indicator.startAnimating()
         request.response({ (result, error) in
             if let result = result {
+                self.indicator.stopAnimating()
                 let tags = result.tags
                 let firstTag = tags![0].uppercased() ?? "TREE"
                 let secondTag = tags![1].uppercased() ?? "SEA"
