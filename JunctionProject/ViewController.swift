@@ -54,17 +54,7 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
             requestFizPlaces(radius: 1000, lat: destinationLat[i], lon: destinationLon[i])
             showMarker(position: CLLocationCoordinate2D.init(latitude: destinationLat[i], longitude: destinationLon[i]), placeName: "", address: "")
         }
-        
-
-
-        let myLocation = locateMyPosition()
-
-
-
     }
-
- }
-
     
     override func viewWillAppear(_ animated: Bool) {
         let greenColor = UIColor(red: 115/255, green: 222/255, blue: 188/255, alpha: 1.0)
