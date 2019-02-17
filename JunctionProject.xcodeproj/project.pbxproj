@@ -21,6 +21,10 @@
 		A7F66F542217B5B9005F4614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F66F522217B5B9005F4614 /* LaunchScreen.storyboard */; };
 		FF324F632217F06900C7E5BA /* RakutenAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F622217F06900C7E5BA /* RakutenAPIRequest.swift */; };
 		FF324F652217FA2700C7E5BA /* WrapperMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F642217FA2700C7E5BA /* WrapperMarker.swift */; };
+		FF324F7022186CC500C7E5BA /* CloudinaryAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F6F22186CC500C7E5BA /* CloudinaryAPIRequest.swift */; };
+		FF324F722218AA0900C7E5BA /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F712218AA0900C7E5BA /* ConfirmViewController.swift */; };
+		FF324F742218AA5C00C7E5BA /* Confirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF324F732218AA5C00C7E5BA /* Confirm.storyboard */; };
+		FF324F762218B25200C7E5BA /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F752218B25200C7E5BA /* CustomPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		B920A78E31F8F159183BC302 /* Pods-JunctionProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JunctionProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JunctionProject/Pods-JunctionProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FF324F622217F06900C7E5BA /* RakutenAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RakutenAPIRequest.swift; sourceTree = "<group>"; };
 		FF324F642217FA2700C7E5BA /* WrapperMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperMarker.swift; sourceTree = "<group>"; };
+		FF324F6F22186CC500C7E5BA /* CloudinaryAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudinaryAPIRequest.swift; sourceTree = "<group>"; };
+		FF324F712218AA0900C7E5BA /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		FF324F732218AA5C00C7E5BA /* Confirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirm.storyboard; sourceTree = "<group>"; };
+		FF324F752218B25200C7E5BA /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,10 @@
 				FF324F622217F06900C7E5BA /* RakutenAPIRequest.swift */,
 				A7E757502217D01200F1264C /* Marker.swift */,
 				FF324F642217FA2700C7E5BA /* WrapperMarker.swift */,
+				FF324F6F22186CC500C7E5BA /* CloudinaryAPIRequest.swift */,
+				FF324F712218AA0900C7E5BA /* ConfirmViewController.swift */,
+				FF324F732218AA5C00C7E5BA /* Confirm.storyboard */,
+				FF324F752218B25200C7E5BA /* CustomPresentationController.swift */,
 			);
 			path = JunctionProject;
 			sourceTree = "<group>";
@@ -188,6 +200,7 @@
 				A7F66F4F2217B5B0005F4614 /* Main.storyboard in Resources */,
 				A7E7575D2218422300F1264C /* icon2.png in Resources */,
 				A7E757612218422300F1264C /* tel.png in Resources */,
+				FF324F742218AA5C00C7E5BA /* Confirm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,12 +254,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-JunctionProject/Pods-JunctionProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +278,9 @@
 			files = (
 				A7F66F4C2217B5B0005F4614 /* ViewController.swift in Sources */,
 				FF324F652217FA2700C7E5BA /* WrapperMarker.swift in Sources */,
+				FF324F762218B25200C7E5BA /* CustomPresentationController.swift in Sources */,
+				FF324F7022186CC500C7E5BA /* CloudinaryAPIRequest.swift in Sources */,
+				FF324F722218AA0900C7E5BA /* ConfirmViewController.swift in Sources */,
 				A7F66F4A2217B5B0005F4614 /* AppDelegate.swift in Sources */,
 				A7E757512217D01200F1264C /* Marker.swift in Sources */,
 				A7E757552217F53200F1264C /* DetailViewController.swift in Sources */,

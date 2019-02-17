@@ -30,6 +30,10 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>位置情報の使用を許可しますか？現在地を地図に表示するために位置情報を使用します。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラの使用を許可しますか？写真撮影をするために使用します。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>写真の使用を許可しますか？写真の表示をするために使用します。</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

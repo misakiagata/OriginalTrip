@@ -27,8 +27,15 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LwR-Xd-3Nc"/>
+                    <navigationItem key="navigationItem" id="LwR-Xd-3Nc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Kd6-dC-SMr">
+                            <connections>
+                                <action selector="tapAddButton:" destination="BYZ-38-t0r" id="pzX-rX-qzo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="Kd6-dC-SMr" id="3cR-BJ-q13"/>
                         <segue destination="x8T-7K-lwA" kind="show" identifier="toDetail" id="bKQ-AO-24e"/>
                     </connections>
                 </viewController>

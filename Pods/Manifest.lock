@@ -3,6 +3,8 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - Cloudinary (2.6.1):
+    - Alamofire (~> 4.8.1)
   - GoogleMaps (3.0.2):
     - GoogleMaps/Maps (= 3.0.2)
   - GoogleMaps/Base (3.0.2)
@@ -15,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireObjectMapper
+  - Cloudinary (~> 2.0)
   - GoogleMaps
   - GooglePlaces
   - ObjectMapper
@@ -23,6 +26,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - Cloudinary
     - GoogleMaps
     - GooglePlaces
     - ObjectMapper
@@ -30,10 +34,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  Cloudinary: a13a1b1137dc1ab625aa9d2d0c4b56171bb971a9
   GoogleMaps: 941cd655e009b4d8e42df19a3d749bc3fccec973
   GooglePlaces: c086e0055dc5f0177d7c9d65fc77a1734f9a4825
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
 
-PODFILE CHECKSUM: 7f024003ec1940a4c59eeb2ff20eceb2b26dd9c2
+PODFILE CHECKSUM: 04cf9f0b01417f7b69144946fb3aaf17cc2933ca
 
 COCOAPODS: 1.5.3

@@ -10,6 +10,7 @@ pod 'GooglePlaces'
 pod 'Alamofire'
 pod 'ObjectMapper'
 pod 'AlamofireObjectMapper'
+pod 'Cloudinary', '~> 2.0'
 
   # Pods for JunctionProject
 

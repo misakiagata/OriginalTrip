@@ -10,13 +10,17 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
+//import Cloudinary
 
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
 
-    var locationManager = CLLocationManager()    
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    var locationManager = CLLocationManager()
     let latitudeList = [35.690167, 35.710063, 35.714765]
     let longitudeList = [139.700359, 139.8107, 139.796655]
     var fezMarkers: [Marker] = []
+    var selectedImage = UIImage()
 
     fileprivate lazy var mapView: GMSMapView = {
         let viewsize = UIScreen.main.bounds.size
@@ -69,7 +73,10 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         self.tabBarController?.tabBar.isHidden = false
         requestFizPlaces(radius: 1000, lat: 51.507784, lon: -0.12994229)
     }
-    
+
+    @IBAction func tapAddButton(_ sender: Any) {
+        showActionSheet()
+    }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         self.performSegue(withIdentifier: "toDetail", sender: nil)
@@ -112,6 +119,61 @@ extension ViewController {
     func requestFizPlaces(radius: Int, lat: Double, lon: Double) {
         RakutenAPIRequest.getPlaces(radius: radius, lat: lat, lon: lon, success: { wrapperMarker in
             self.fezMarkers = wrapperMarker.results
+        })
+    }
+
+    func showActionSheet() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        let photoLibraryAction = UIAlertAction(title: "カメラロールから選ぶ", style: .default) { action in
+            self.present(self.createImagePickerController(type: .photoLibrary), animated: true, completion: nil)
+        }
+        let cameraAction = UIAlertAction(title: "カメラで撮る", style: .default) { action in
+            self.present(self.createImagePickerController(type: .camera), animated: true, completion: nil)
+        }
+
+        alert.addAction(cancelAction)
+        alert.addAction(photoLibraryAction)
+        alert.addAction(cameraAction)
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func createImagePickerController(type: UIImagePickerController.SourceType) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = type
+
+        return imagePicker
+    }
+}
+
+// MARK: - Image picker controller delegate
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : Any]?) {
+
+        selectedImage = image
+        dismiss(animated: true, completion: {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Confirm", bundle: nil) 
+            let vc = storyboard.instantiateInitialViewController()! as! ConfirmViewController
+            vc.selectedImage = self.selectedImage
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        })
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        selectedImage = info[.originalImage] as? UIImage ?? UIImage()
+        dismiss(animated: true, completion: {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Confirm", bundle: nil)
+            let vc = storyboard.instantiateInitialViewController()! as! ConfirmViewController
+            vc.selectedImage = self.selectedImage
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
         })
     }
 }
