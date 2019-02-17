@@ -21,6 +21,10 @@
 		A7E75770221880B200F1264C /* junction3.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E7576C221880B100F1264C /* junction3.png */; };
 		A7E75771221880B200F1264C /* junction5.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E7576D221880B100F1264C /* junction5.png */; };
 		A7E75772221880B200F1264C /* junction4.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E7576E221880B200F1264C /* junction4.png */; };
+		A7E757742218F4B800F1264C /* image@2x.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A7E757732218F4B700F1264C /* image@2x.JPG */; };
+		A7E757772218F62900F1264C /* reserve@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E757752218F62800F1264C /* reserve@2x.png */; };
+		A7E757782218F62900F1264C /* explore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E757762218F62900F1264C /* explore@2x.png */; };
+		A7E7577A2218FB0600F1264C /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E757792218FB0500F1264C /* star@2x.png */; };
 		A7F66F4A2217B5B0005F4614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F66F492217B5B0005F4614 /* AppDelegate.swift */; };
 		A7F66F4C2217B5B0005F4614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F66F4B2217B5B0005F4614 /* ViewController.swift */; };
 		A7F66F4F2217B5B0005F4614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7F66F4D2217B5B0005F4614 /* Main.storyboard */; };
@@ -50,6 +54,10 @@
 		A7E7576C221880B100F1264C /* junction3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junction3.png; sourceTree = "<group>"; };
 		A7E7576D221880B100F1264C /* junction5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junction5.png; sourceTree = "<group>"; };
 		A7E7576E221880B200F1264C /* junction4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = junction4.png; sourceTree = "<group>"; };
+		A7E757732218F4B700F1264C /* image@2x.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "image@2x.JPG"; sourceTree = "<group>"; };
+		A7E757752218F62800F1264C /* reserve@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reserve@2x.png"; sourceTree = "<group>"; };
+		A7E757762218F62900F1264C /* explore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "explore@2x.png"; sourceTree = "<group>"; };
+		A7E757792218FB0500F1264C /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		A7F66F462217B5B0005F4614 /* JunctionProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JunctionProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F66F492217B5B0005F4614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F66F4B2217B5B0005F4614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +106,11 @@
 		A7E757622218424000F1264C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A7E757792218FB0500F1264C /* star@2x.png */,
 				A7E757692218755E00F1264C /* tour.png */,
+				A7E757762218F62900F1264C /* explore@2x.png */,
+				A7E757752218F62800F1264C /* reserve@2x.png */,
+				A7E757732218F4B700F1264C /* image@2x.JPG */,
 				A7E757592218422200F1264C /* check.png */,
 				A7E7575A2218422200F1264C /* icon1.png */,
 				A7E757582218422200F1264C /* icon2.png */,
@@ -218,14 +230,18 @@
 				A7F66F542217B5B9005F4614 /* LaunchScreen.storyboard in Resources */,
 				A7E7576622186E6000F1264C /* junction.png in Resources */,
 				A7E7576A2218755E00F1264C /* tour.png in Resources */,
+				A7E757742218F4B800F1264C /* image@2x.JPG in Resources */,
 				A7E7575E2218422300F1264C /* check.png in Resources */,
+				A7E7577A2218FB0600F1264C /* star@2x.png in Resources */,
 				A7E7575F2218422300F1264C /* icon1.png in Resources */,
+				A7E757772218F62900F1264C /* reserve@2x.png in Resources */,
 				A7F66F512217B5B9005F4614 /* Assets.xcassets in Resources */,
 				A7E75771221880B200F1264C /* junction5.png in Resources */,
 				A7E75772221880B200F1264C /* junction4.png in Resources */,
 				A7F66F4F2217B5B0005F4614 /* Main.storyboard in Resources */,
 				A7E75770221880B200F1264C /* junction3.png in Resources */,
 				A7E7575D2218422300F1264C /* icon2.png in Resources */,
+				A7E757782218F62900F1264C /* explore@2x.png in Resources */,
 				A7E757612218422300F1264C /* tel.png in Resources */,
 				FF324F742218AA5C00C7E5BA /* Confirm.storyboard in Resources */,
 			);
@@ -459,8 +475,9 @@
 			baseConfigurationReference = B920A78E31F8F159183BC302 /* Pods-JunctionProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 679U29FZ6S;
+				DEVELOPMENT_TEAM = C6HH3B6HAK;
 				INFOPLIST_FILE = JunctionProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.misakiagata.JunctionProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,8 +497,9 @@
 			baseConfigurationReference = 8A53D7C042C380A99FBCB4AA /* Pods-JunctionProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 679U29FZ6S;
+				DEVELOPMENT_TEAM = C6HH3B6HAK;
 				INFOPLIST_FILE = JunctionProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,6 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.misakiagata.JunctionProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
