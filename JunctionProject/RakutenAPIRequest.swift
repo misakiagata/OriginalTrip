@@ -33,7 +33,7 @@ struct RakutenAPIRequest {
                 let map = Map(mappingType: .fromJSON, JSON: json as? [String : Any] ?? [:])
                 guard let result = WrapperMarker(map: map) else { return }
                 success(result)
-                print(result.count)
+                //print(result.count)
             case .failure(let error):
                 print("error===========================")
                 print(error)

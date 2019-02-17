@@ -41,21 +41,20 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         let orangeColor = UIColor(red: 255/255, green: 154/255, blue: 1/255, alpha: 1.0)
         phoneCallButton.layer.borderColor = orangeColor.cgColor
         phoneCallButton.layer.borderWidth = 2
-        phoneCallButton.setImage(UIImage.init(named: "tel.png"), for: .normal)
         phoneCallButton.layer.masksToBounds = true
         
         reserveButton.layer.cornerRadius = reserveButton.bounds.height/2
-        reserveButton.setImage(UIImage.init(named: "check.png"), for: .normal)
         reserveButton.layer.masksToBounds = true
         
         mapImageView.image = UIImage(named: "tour.png")
 
-        organizerImageView.image = UIImage(named: "tel.png")
         organizerImageView.layer.cornerRadius = organizerImageView.bounds.height/2
         organizerImageView.layer.masksToBounds = true
         
-        navigationController?.navigationBar.topItem?.title = "Trip Details"
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        //navigationController?.navigationBar.topItem?.title = "Trip Details"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.tintColor = UIColor.white
         
         //view.addSubview(mapView)
         
@@ -78,12 +77,12 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         let greenColor = UIColor(red: 115/255, green: 222/255, blue: 188/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = greenColor
         self.tabBarController?.tabBar.isHidden = true
-        navigationController?.navigationBar.topItem?.title = "Trip Details"
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.tintColor = UIColor.white
+        //navigationController?.navigationBar.topItem?.title = "Trip Details"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
-
     }
-
     
     func locateMyPosition() -> CLLocationCoordinate2D {
         // 現在地の緯度経度
@@ -139,6 +138,9 @@ class DetailViewController: UIViewController, GMSMapViewDelegate, CLLocationMana
         present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func didTapButton() {
+        self.performSegue(withIdentifier: "toPlanDetail", sender: nil)
+    }
 
 
 }

@@ -13,30 +13,30 @@ import CoreLocation
 //import Cloudinary
 
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
-
-
+    
+    
     @IBOutlet weak var addButton: UIBarButtonItem!
-   
+    
     var locationManager = CLLocationManager()
     let destinationLat = [37.443077,37.340513,37.45770303986311,37.339446,37.402469]
     let destinationLon = [-122.154619,-122.068843,-122.1636354224854,-121.892531,-122.147960]
-
+    
     var fezMarkers: [Marker] = []
     var selectedImage = UIImage()
-
+    
     fileprivate lazy var mapView: GMSMapView = {
         let viewsize = UIScreen.main.bounds.size
-
+        
         let view = GMSMapView(frame: CGRect(x: 0, y: 0, width: viewsize.width, height: viewsize.height))
         return view
     }()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         locationManager.requestWhenInUseAuthorization()
-
+        
         view.addSubview(mapView)
         mapView.updateConstraintsIfNeeded()
         mapView.isMyLocationEnabled = true
@@ -44,27 +44,35 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         mapView.delegate = self
         
         navigationController?.navigationBar.topItem?.title = "HOME"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.tintColor = UIColor.white
         
         var myLocation = locateMyPosition()
         
         for i in 0..<5 {
-            print(destinationLat[i])
-            print(destinationLon[i])
             requestFizPlaces(radius: 1000, lat: destinationLat[i], lon: destinationLon[i])
             showMarker(position: CLLocationCoordinate2D.init(latitude: destinationLat[i], longitude: destinationLon[i]), placeName: "", address: "")
         }
+
+        //let myLocation = locateMyPosition()
+        
+
     }
+
     
     override func viewWillAppear(_ animated: Bool) {
         let greenColor = UIColor(red: 115/255, green: 222/255, blue: 188/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = greenColor
+        navigationController?.navigationBar.tintColor = UIColor.white
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.topItem?.title = "HOME"
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-       
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        
     }
-
+    
     @IBAction func tapAddButton(_ sender: Any) {
         showActionSheet()
     }
@@ -102,13 +110,13 @@ extension ViewController {
         marker.position = position
         marker.title = placeName
         marker.snippet = address
-
+        
         //マーカーをmapviewに表示
         marker.map = self.mapView
-
+        
     }
-
-
+    
+    
     func requestFizPlaces(radius: Int, lat: Double, lon: Double) {
         RakutenAPIRequest.getPlaces(radius: radius, lat: lat, lon: lon, success: { wrapperMarker in
             self.fezMarkers = wrapperMarker.results
@@ -118,7 +126,7 @@ extension ViewController {
             }
         })
     }
-
+    
     func showActionSheet() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
@@ -128,28 +136,29 @@ extension ViewController {
         let cameraAction = UIAlertAction(title: "カメラで撮る", style: .default) { action in
             self.present(self.createImagePickerController(type: .camera), animated: true, completion: nil)
         }
-
+        
         alert.addAction(cancelAction)
         alert.addAction(photoLibraryAction)
         alert.addAction(cameraAction)
-
+        
         self.present(alert, animated: true, completion: nil)
     }
-
+    
     func createImagePickerController(type: UIImagePickerController.SourceType) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = type
-
+        
         return imagePicker
     }
+    
 }
 
 // MARK: - Image picker controller delegate
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : Any]?) {
-
+        
         selectedImage = image
         dismiss(animated: true, completion: {
             let storyboard: UIStoryboard = UIStoryboard(name: "Confirm", bundle: nil) 
@@ -160,9 +169,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             self.present(vc, animated: true, completion: nil)
         })
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         selectedImage = info[.originalImage] as? UIImage ?? UIImage()
         dismiss(animated: true, completion: {
             let storyboard: UIStoryboard = UIStoryboard(name: "Confirm", bundle: nil)
