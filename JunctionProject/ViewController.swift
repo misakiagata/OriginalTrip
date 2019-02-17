@@ -14,11 +14,13 @@ import CoreLocation
 
 class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate  {
 
+
     @IBOutlet weak var addButton: UIBarButtonItem!
-    
+   
     var locationManager = CLLocationManager()
-    let latitudeList = [35.690167, 35.710063, 35.714765]
-    let longitudeList = [139.700359, 139.8107, 139.796655]
+    let destinationLat = [37.443077,37.340513,37.45770303986311,37.339446,37.402469]
+    let destinationLon = [-122.154619,-122.068843,-122.1636354224854,-121.892531,-122.147960]
+
     var fezMarkers: [Marker] = []
     var selectedImage = UIImage()
 
@@ -41,37 +43,36 @@ class ViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDel
         mapView.settings.myLocationButton = true
         mapView.delegate = self
         
-        for latitude in latitudeList {
-            for longitude in longitudeList {
-                showMarker(position: CLLocationCoordinate2D.init(latitude: latitude, longitude: longitude), placeName: "", address: "")
-            }
+        navigationController?.navigationBar.topItem?.title = "HOME"
+        navigationController?.navigationBar.tintColor = UIColor.white
+        
+        var myLocation = locateMyPosition()
+        
+        for i in 0..<5 {
+            print(destinationLat[i])
+            print(destinationLon[i])
+            requestFizPlaces(radius: 1000, lat: destinationLat[i], lon: destinationLon[i])
+            showMarker(position: CLLocationCoordinate2D.init(latitude: destinationLat[i], longitude: destinationLon[i]), placeName: "", address: "")
         }
- 
-        //        let latitude = locationManager.location?.coordinate.latitude
-        //        let longitude = locationManager.location?.coordinate.longitude
-        //        var currentLocation = CGPoint(x: longitude!, y: latitude!)
+        
+
 
         let myLocation = locateMyPosition()
 
 
-//        let direction = Direction(from:"35.6775602107869,139.692658446729",to: "35.707848364433,139.701456092298",mode: .walking)
-//        direction.directionCompletion(handler: { (route) in
-//
-//            for route in route.routes {
-//                self.mapView.addDirection(path: (route?.overview_polyline?.points)!)
-//            }
-//
-//        }) { (error) in
-//            print (error)
-//        }
+
     }
+
+ }
+
     
     override func viewWillAppear(_ animated: Bool) {
         let greenColor = UIColor(red: 115/255, green: 222/255, blue: 188/255, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = greenColor
-        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.tabBarController?.tabBar.isHidden = false
-        requestFizPlaces(radius: 1000, lat: 51.507784, lon: -0.12994229)
+        navigationController?.navigationBar.topItem?.title = "HOME"
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+       
     }
 
     @IBAction func tapAddButton(_ sender: Any) {
@@ -89,15 +90,16 @@ extension ViewController {
         // 現在地の緯度経度
         let latitude = locationManager.location?.coordinate.latitude
         let longitude = locationManager.location?.coordinate.longitude
-
+        let destinationLocation = CLLocationCoordinate2DMake(37.3874, -122.0575)
         let dummyLocation = CLLocationCoordinate2DMake(35.690167, 139.700359)
         //表示する時の中心となる場所を指定する（nilに注意）
         if let unwrappedLatitude = latitude {
             //位置情報の使用を許可されてる時（現在地を中心に表示）
             guard let unwrappedLongtitude = longitude else { return dummyLocation }
-            let camera = GMSCameraPosition.camera(withLatitude: unwrappedLatitude, longitude: unwrappedLongtitude, zoom: 15.0)
+            let camera = GMSCameraPosition.camera(withLatitude: destinationLocation.latitude, longitude: destinationLocation.longitude, zoom: 10.0)
             mapView.camera = camera
-            return locationManager.location?.coordinate ?? dummyLocation
+            return destinationLocation
+            //return locationManager.location?.coordinate ?? dummyLocation
         } else {
             //位置情報を許可しない場合＆初回（新宿駅を中心に表示する）
             let camera = GMSCameraPosition.camera(withLatitude: 35.690167, longitude: 139.700359, zoom: 15.0)
@@ -116,9 +118,14 @@ extension ViewController {
 
     }
 
+
     func requestFizPlaces(radius: Int, lat: Double, lon: Double) {
         RakutenAPIRequest.getPlaces(radius: radius, lat: lat, lon: lon, success: { wrapperMarker in
             self.fezMarkers = wrapperMarker.results
+            //print(self.fezMarkers.first?.latitude)
+            for fez in self.fezMarkers {
+                self.showMarker(position: CLLocationCoordinate2D.init(latitude: fez.latitude, longitude: fez.longitude), placeName: fez.name, address: "")
+            }
         })
     }
 
