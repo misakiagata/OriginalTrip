@@ -33,6 +33,7 @@
 		FF324F742218AA5C00C7E5BA /* Confirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF324F732218AA5C00C7E5BA /* Confirm.storyboard */; };
 		FF324F762218B25200C7E5BA /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F752218B25200C7E5BA /* CustomPresentationController.swift */; };
 		FF324F7A2218EB8A00C7E5BA /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F792218EB8A00C7E5BA /* AlertController.swift */; };
+		FF324F7E2219006D00C7E5BA /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF324F7D2219006C00C7E5BA /* UIImage+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		FF324F732218AA5C00C7E5BA /* Confirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Confirm.storyboard; sourceTree = "<group>"; };
 		FF324F752218B25200C7E5BA /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		FF324F792218EB8A00C7E5BA /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		FF324F7D2219006C00C7E5BA /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				FF324F712218AA0900C7E5BA /* ConfirmViewController.swift */,
 				FF324F732218AA5C00C7E5BA /* Confirm.storyboard */,
 				FF324F752218B25200C7E5BA /* CustomPresentationController.swift */,
+				FF324F7D2219006C00C7E5BA /* UIImage+extension.swift */,
 			);
 			path = JunctionProject;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				A7F66F4C2217B5B0005F4614 /* ViewController.swift in Sources */,
 				A7E757682218726800F1264C /* DetailSpotsViewController.swift in Sources */,
 				FF324F652217FA2700C7E5BA /* WrapperMarker.swift in Sources */,
+				FF324F7E2219006D00C7E5BA /* UIImage+extension.swift in Sources */,
 				FF324F762218B25200C7E5BA /* CustomPresentationController.swift in Sources */,
 				FF324F7022186CC500C7E5BA /* CloudinaryAPIRequest.swift in Sources */,
 				FF324F722218AA0900C7E5BA /* ConfirmViewController.swift in Sources */,
